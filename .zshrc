@@ -30,6 +30,13 @@ alias psall="ps aux"
 alias net='traceroute 8.8.8.8'
 
 ## EMR Project
+alias setup="pyenv activate emr-backend && source env/emr-env"
+alias apiT="run test"
+alias migr="manage.py migrate"
+alias ge2e="grunt test:e2e"
+alias gunit="grunt test:unit"
+alias gprod="grunt connect:prod"
+alias gdev="grunt connect:dev"
 
 ## Online Banking aliases
 alias gd='grunt develop'
