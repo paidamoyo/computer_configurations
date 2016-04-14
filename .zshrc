@@ -30,7 +30,9 @@ alias psall="ps aux"
 alias net='traceroute 8.8.8.8'
 
 ## EMR Project
-alias setup="pyenv activate emr-backend && source env/emr-env"
+alias setup="pyenv activate emr-backend && source env/emr-env
+&& pip install -r requirements-test.txt && pip install -r requirements-deploy.txt && run setup"
+alias serve="./manage.py runserver"
 alias apiT="run test"
 alias migr="manage.py migrate"
 alias ge2e="grunt test:e2e"
