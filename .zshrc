@@ -39,7 +39,7 @@ alias gunit="grunt test:unit"
 alias gprod="grunt connect:prod"
 alias gdev="grunt connect:dev"
 alias dbstart="psql -h localhost"
-alias dblogs="tail /usr/local/var/postgres/server.log"
+alias dblog="tail /usr/local/var/postgres/server.log"
 
 ## Online Banking aliases
 alias gd='grunt develop'
