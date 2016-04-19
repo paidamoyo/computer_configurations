@@ -9,6 +9,7 @@ plugins=(git rails ruby)
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TERM=xterm-256color
+ssh-add ~/.ssh/id_rsa &>/dev/null
 
 ## Ruby setup
 export PATH="$HOME/.rbenv/bin:$PATH"
