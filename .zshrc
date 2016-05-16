@@ -25,13 +25,17 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+## Anaconda setup
+export PATH=~/anaconda3/bin:"$PATH"
+export DYLD_FALLBACK_LIBRARY_PATH="$HOME/anaconda3/envs/emr-backend/lib/:$DYLD_FALLBACK_LIBRARY_PATH"
+
 ## System level aliases
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias psall="ps aux"
 alias net='traceroute 8.8.8.8'
 
 ## EMR Project
-alias setup="pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-deploy.txt && run setup --no_sudo=True && python factories dev"
+alias setup="source activate emr-backend && pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-docs.txt  && run setup --no_sudo=True && python factories dev debug"
 alias serve="./manage.py runserver"
 alias lint="flake8"
 alias apiT="run test"
