@@ -25,6 +25,9 @@ export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+## Mono Setup
+export DYLD_FALLBACK_LIBRARY_PATH="$MONO_FRAMEWORK_PATH/lib:$DYLD_FALLBACK_LIBRARY_PATH:/usr/lib"
+
 ## Anaconda setup
 export PATH=~/anaconda3/bin:"$PATH"
 export DYLD_FALLBACK_LIBRARY_PATH="$HOME/anaconda3/envs/emr-backend/lib/:$DYLD_FALLBACK_LIBRARY_PATH"
@@ -35,7 +38,7 @@ alias psall="ps aux"
 alias net='traceroute 8.8.8.8'
 
 ## EMR Project
-alias setup="source activate emr-backend && pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-docs.txt  && run setup --no_sudo=True && python factories dev debug"
+alias setup="pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-docs.txt  && run setup --no_sudo=True && python factories dev debug"
 alias serve="./manage.py runserver"
 alias lint="flake8"
 alias apiT="run test"
@@ -44,6 +47,7 @@ alias ge2e="grunt test:e2e"
 alias gunit="grunt test:unit"
 alias gprod="grunt connect:prod"
 alias gdev="grunt connect:dev"
+alias gprotra="grunt protractor:continuous"
 alias dbstart="psql -h localhost"
 alias dblog="tail /usr/local/var/postgres/server.log"
 
@@ -62,3 +66,9 @@ alias gspush='git svn dcommit'
 alias gspull='git svn rebase'
 
 
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/ash-girlchapfuwa/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/ash-girlchapfuwa/google-cloud-sdk/completion.zsh.inc'
