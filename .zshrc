@@ -38,7 +38,7 @@ alias psall="ps aux"
 alias net='traceroute 8.8.8.8'
 
 ## EMR Project
-alias setup="pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-docs.txt && pip install -r requirements-deploy.txt  && run setup --no_sudo=True && python factories dev debug"
+alias setup="pyenv activate emr-backend && source env/emr-env && pip install -r requirements-test.txt && pip install -r requirements-docs.txt && pip install -r requirements-deploy.txt  && run setup --no_sudo=True"
 alias serve="./manage.py runserver"
 alias lint="flake8"
 alias apiT="run test"
@@ -50,6 +50,7 @@ alias gdev="grunt connect:dev"
 alias gprotra="grunt protractor:continuous"
 alias dbstart="psql -h localhost"
 alias dblog="tail /usr/local/var/postgres/server.log"
+alias pydata="python factories dev debug"
 
 ## Online Banking aliases
 alias gd='grunt develop'
