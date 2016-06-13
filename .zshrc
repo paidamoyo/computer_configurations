@@ -74,3 +74,9 @@ source "$HOME/google-cloud-sdk/path.zsh.inc"
 
 # The next line enables shell command completion for gcloud.
 source "$HOME/google-cloud-sdk/completion.zsh.inc"
+
+## Edge.js
+source dnvm.sh
+export PKG_CONFIG_PATH="/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
