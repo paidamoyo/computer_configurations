@@ -1,15 +1,15 @@
-#oh-my-zsh configurations
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="robbyrussell"
-source $ZSH/oh-my-zsh.sh
-
-## Plugins
-plugins=(git rails ruby)
-
 # User configuration
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export TERM=xterm-256color
 ssh-add ~/.ssh/id_rsa &>/dev/null
+
+## Plugins
+plugins=(git rails ruby)
+
+#oh-my-zsh configurations
+ZSH=$HOME/.oh-my-zsh
+ZSH_THEME="robbyrussell"
+source $ZSH/oh-my-zsh.sh
 
 ## Ruby setup
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -21,8 +21,8 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 ## Python setup
-# export PATH="$HOME/.pyenv/shims:$PATH"
-PATH=$PATH:$HOME/.pyenv/shims
+export PATH="$HOME/.pyenv/shims:$PATH"
+# PATH=$PATH:$HOME/.pyenv/shims
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
