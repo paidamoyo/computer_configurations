@@ -21,7 +21,8 @@ export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
 
 ## Python setup
-export PATH="$HOME/.pyenv/shims:$PATH"
+# export PATH="$HOME/.pyenv/shims:$PATH"
+PATH=$PATH:$HOME/.pyenv/shims
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
@@ -31,6 +32,9 @@ export DYLD_FALLBACK_LIBRARY_PATH="$MONO_FRAMEWORK_PATH/lib:$DYLD_FALLBACK_LIBRA
 # ## Anaconda setup
 # export PATH=~/anaconda3/bin:"$PATH"
 # export DYLD_FALLBACK_LIBRARY_PATH="$HOME/anaconda3/envs/emr-backend/lib/:$DYLD_FALLBACK_LIBRARY_PATH"
+
+## Node
+export PATH="$(npm bin):$PATH"
 
 ## System level aliases
 alias myip="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
@@ -80,3 +84,6 @@ source dnvm.sh
 export PKG_CONFIG_PATH="/Library/Frameworks/Mono.framework/Versions/Current/lib/pkgconfig"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+## Update python libraries
+# pip install -U `pip list --outdated | awk '{ print $1}'`
